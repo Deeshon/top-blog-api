@@ -1,0 +1,21 @@
+POST http://localhost:3001/api/user/create
+Content-Type: application/json
+
+{
+    "username": "aaran9",
+    "password": "nyctophile101"
+}
+
+
+###
+POST http://localhost:3001/api/post/create
+Content-Type: application/json
+
+{
+    "title": "Test Post Title2",
+    "content": "Test Post Content2",
+    "author": "646cd22013bba127b634f151"
+}
+
+###
+GET http://localhost:3001/api/post/646cd30440031bfe4fae66cd
