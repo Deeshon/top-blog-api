@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const Header = () => {
     return(
         <div className="header">
@@ -10,7 +12,9 @@ const Header = () => {
                 </div>
             </div>
             <div style={{display: "flex", marginRight: "20px", alignItems: 'center'}}>
+                <Link to={"/post/create"}>
                 <button className="write-post">✎ Write</button>
+                </Link>
                 <div className="profile">
                     <img src="/profile.jpg" width={"100px"}></img>
                 </div>

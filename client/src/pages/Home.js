@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import PostsContainer from "./Posts";
-import Header from "./Header";
-import SubContainer from "./Sub-Container";
+import PostsContainer from "../components/Posts";
+import Header from "../components/Header";
+import SubContainer from "../components/Sub-Container";
 
 const API_BASE = "http://localhost:3001/api"
 

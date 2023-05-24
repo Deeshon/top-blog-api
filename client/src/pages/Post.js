@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
-import Header from "./Header"
+import Header from "../components/Header"
 
 const API_BASE = "http://localhost:3001"
 const moment = require('moment')

@@ -134,3 +134,81 @@ a {
   line-height: 40px;
 }
 
+.write-header {
+  color: white;
+  background-color: black;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.publish {
+  margin-right: 40px;
+  background-color: lightgreen;
+  padding: 5px;
+  width: 75px;
+  text-align: center;
+  color: black;
+  border-radius: 20px;
+  transition: opacity 0.5s;
+}
+
+.publish:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.write-container {
+  color: white;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.write-title:focus, .write-summary:focus {
+  all:unset;
+}
+
+.write-title, .write-title:focus {
+  height: 60px;
+  padding-left: 20px;
+  font-size: 50px;
+  background-color: rgb(15 23 42);
+  border: none;
+  color: white;
+}
+
+
+
+.write-summary, .write-summary:focus {
+  height: 60px;
+  margin-top: 20px;
+  padding-left: 20px;
+  font-size: 38px;
+  background-color: rgb(15 23 42);
+  border: none;
+  color: white;
+}
+
+
+textarea:focus {
+  all: unset;
+}
+
+textarea, textarea:focus {
+  background-color: rgb(15 23 42);
+  border: none;
+  color: white;
+  margin-top: 25px;
+  font-size: 28px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+
+.write-container ::placeholder {
+  color: white
+}
