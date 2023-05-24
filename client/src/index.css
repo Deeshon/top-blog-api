@@ -1,13 +1,136 @@
-body {
+html, body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  font-family: "Josefin Sans", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: rgb(15 23 42);
+
 }
+
+* {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+a {
+  all: unset;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.header {
+  background-color: black;
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 5000;
+}
+
+.icon {
+  margin-left: 20px;
+}
+
+.search {
+  margin-left: 20px
+}
+
+.search input[type=text] {
+  border-radius: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.write-post {
+  color: white;
+  background-color: black;
+  border: none;
+  width: 100px;
+  border-radius: 30px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color 0.5s;
+}
+
+.write-post:hover {
+  color: lightgray;
+  cursor: pointer;
+}
+
+
+.sub-container {
+  margin-top: 50px;
+  width: 50%;
+  height: fit-content;
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 5px;
+}
+
+.sub-title {
+  font-size: 20px;
+  opacity: 0.5;
+}
+
+.post-container {
+  color: white;
+  margin-top: 75px;
+  width: 45%;
+}
+
+.post {
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.post:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.post-summary {
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.readmore {
+  padding-top: 20px;
+  color: lightskyblue;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+.post-view{
+  margin-top: 100px;
+  color: white;
+  width: 50%;
+}
+
+.post-date {
+  opacity: 0.5;
+}
+
+.post-content {
+  font-size:larger;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  line-height: 40px;
+}
+

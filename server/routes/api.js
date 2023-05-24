@@ -36,6 +36,7 @@ router.get("/post/:id", async (req, res) => {
 router.post("/post/create", async (req, res) => {
     const post = new Post({
         title: req.body.title,
+        summary: req.body.summary,
         content: req.body.content,
         author: req.body.author
     })

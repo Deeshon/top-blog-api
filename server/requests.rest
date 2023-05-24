@@ -12,10 +12,11 @@ POST http://localhost:3001/api/post/create
 Content-Type: application/json
 
 {
-    "title": "Test Post Title2",
-    "content": "Test Post Content2",
+    "title": "Google Bard AI vs. OpenAI ChatGPT: The Battle of the AI Chatbots",
+    "summary": "Google Bard AI and OpenAI ChatGPT are two of the most advanced AI chatbots on the market. Both chatbots are capable of carrying on conversations that are indistinguishable from those of a human, but with different strengths and weaknesses.",
+    "content": "Google Bard AI and OpenAI ChatGPT are two of the most advanced AI chatbots on the market. Both chatbots are capable of carrying on conversations that are indistinguishable from those of a human. However, there are some key differences between the two chatbots. Google Bard AI is trained on a massive dataset of text and code. This gives Bard AI a wider range of knowledge and allows it to generate more creative and informative responses. However, Bard AI can also be more verbose and less concise than ChatGPT. OpenAI ChatGPT is trained on a smaller dataset of text only. This limits ChatGPT's knowledge base, but it also makes ChatGPT more concise and to the point. ChatGPT is also better at generating responses that are tailored to the specific user. In a recent test, Google Bard AI and OpenAI ChatGPT were asked to complete a variety of tasks, including writing summaries of factual topics, generating creative text formats, and answering questions in an informative way. Google Bard AI performed better on the factual topics and creative text formats, while OpenAI ChatGPT performed better on the question-answering tasks. Overall, both Google Bard AI and OpenAI ChatGPT are impressive AI chatbots. However, there are some key differences between the two chatbots. Google Bard AI is more knowledgeable and creative, while OpenAI ChatGPT is more concise and to the point. Ultimately, the best chatbot for you will depend on your specific needs.",
     "author": "646cd22013bba127b634f151"
 }
 
 ###
-GET http://localhost:3001/api/post/646cd30440031bfe4fae66cd
+GET http://localhost:3001/api
