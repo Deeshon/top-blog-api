@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { UserContext } from "../UserContext"
 
 const API_BASE = "http://localhost:3001"
 
@@ -7,6 +8,8 @@ const Write = () => {
     const [title, setTitle] = useState("")
     const [summary, setSummary] = useState("")
     const [content, setContent] = useState("")
+
+    const {userInfo} = useContext(UserContext)
 
     const createPost = async () => {
         await fetch(API_BASE + "/api/post/create", {
@@ -18,7 +21,7 @@ const Write = () => {
                 title: title,
                 summary: summary,
                 content: content,
-                author: "646cd22013bba127b634f151"
+                author: userInfo._id
             })
         })
 

@@ -6,7 +6,7 @@ const API_BASE = "http://localhost:3001"
 const moment = require('moment')
 moment.locale()
 
-const Post = () => {
+const Post = ({userData, setUserData}) => {
 
     const [post, setPost] = useState([])
     const {id} = useParams()
@@ -25,7 +25,6 @@ const Post = () => {
 
     return(
         <div style={{display: 'flex', justifyContent: 'center'}}>
-            <Header />
             <div className="post-view">
                 <h4 className="post-date">{moment(post.timestamp).format('LL')}</h4>
                 <h1 className="post-title">{post.title}</h1>

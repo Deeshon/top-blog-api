@@ -12,6 +12,7 @@ body {
 
 * {
   font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;         
 }
 
 a {
@@ -40,6 +41,10 @@ a {
   margin-left: 20px;
 }
 
+.icon:hover {
+  cursor: pointer;
+}
+
 .search {
   margin-left: 20px
 }
@@ -48,6 +53,24 @@ a {
   border-radius: 20px;
   padding: 10px;
   width: 100%;
+}
+
+.btn {
+  padding: 10px;
+  width: 100px;
+  margin-right: 20px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: opacity 0.5s;
+  text-align: center
+}
+
+.btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .write-post {
@@ -70,6 +93,7 @@ a {
 
 .sub-container {
   margin-top: 50px;
+  min-width: fit-content;
   width: 50%;
   height: fit-content;
   color: white;
@@ -211,4 +235,44 @@ textarea, textarea:focus {
 
 .write-container ::placeholder {
   color: white
+}
+
+.model-close:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.login-container input:focus {
+  all:unset
+}
+
+.login-container input, .login-container input:focus{
+  padding: 10px;
+  width: 300px;
+  margin-top: 20px;
+  font-size: 20px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.login-container ::placeholder {
+  color: white;
+}
+
+.model-sign-in {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  margin-top: 40px;
+  border: none;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.model-sign-in:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
