@@ -22,6 +22,7 @@ function App() {
               <Route path='/post/:id' element={<Post />} ></Route>
             </Route>
             <Route path='/post/create' element={<Write />}></Route>
+            <Route path='/post/update/:id' element={<Write />}></Route>
           </Routes>
         </UserContextProvider>
     </div>

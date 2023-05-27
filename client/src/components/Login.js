@@ -19,6 +19,7 @@ const Login = () => {
 
         if (response.ok) {
             setVisible(false)
+            window.location.href = 'http://localhost:3000'
         } else {
             alert('Sign in failed')
         }

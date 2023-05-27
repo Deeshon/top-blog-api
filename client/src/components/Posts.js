@@ -1,7 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, Navigate } from 'react-router-dom'
+import { UserContext } from '../UserContext'
 
 const PostsContainer = ({posts, sendData}) => {
+
+    const [redirect, setRedirect] = useState(false)
+
     return(
         <div className="post-container">
             <div>
@@ -17,8 +21,19 @@ const PostsContainer = ({posts, sendData}) => {
 
 const PreviewPost = ({post}) => {
 
+    const {userInfo} = useContext(UserContext)
+    
+    try {
+        var  userId = userInfo._id
+        var  userIsAdmin = userInfo.admin
+    } catch {
+        var userId = ''
+        var userIsAdmin = false
+    }
+    
+
     const deletePost = async (id) => {
-        await fetch("http://localhost:3001/api/post/delete" + id, {
+        await fetch("http://localhost:3001/api/post/delete/" + id, {
             method: 'DELETE',   
         })
 
@@ -48,10 +63,19 @@ const PreviewPost = ({post}) => {
                 </div>
             </Link>
             <div style={{marginTop: '20px'}}>
-                <button className="edit-post" onClick={() => alert('clicked')}>✎</button>
-                <button className="delete-post" onClick={() => {
-                    deletePost(post._id)
-                    }}>✖</button>
+                {userIsAdmin && (
+                    <div>
+                        <button className="edit-post" onClick={() => {window.location.href = `http://localhost:3000/post/update/${post._id}`}}>✎</button>
+                        <button className="delete-post" onClick={() => {deletePost(post._id)}}>✖</button>
+                    </div>
+                )}
+                {!userIsAdmin && userId === post.author._id && (
+                    <div>
+                        <button className="edit-post" onClick={() => {window.location.href = 'http://localhost:3000/post/create'}}>✎</button>
+                        <button className="delete-post" onClick={() => {deletePost(post._id)}}>✖</button>
+                    </div>
+                )}
+
             </div>
         </div>
     )

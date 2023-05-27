@@ -95,10 +95,24 @@ router.post("/post/create", async (req, res) => {
     res.json({post})
 })
 
-router.delete("/post/delete:id", async (req, res) => {
+router.delete("/post/delete/:id", async (req, res) => {
     await Post.deleteOne({_id: req.params.id})
 })
 
+
+router.get('/post/update/:id', async (req, res) => {
+   const post = await Post.findOne({_id: req.params.id})
+
+    res.json(post)
+})
+
+router.put('/post/update/:id', async (req, res) => {
+    await Post.updateOne({_id: req.params.id}, {$set: {
+        title: req.body.title,
+        summary: req.body.summary,
+        content: req.body.content,
+    }})
+})
 
 // /// COMMENT ROUTES ///
 
