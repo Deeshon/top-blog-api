@@ -1,9 +1,13 @@
 import { useContext, useEffect, useState } from "react"
 import { UserContext } from "../UserContext"
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css'
 
 const API_BASE = "http://localhost:3001"
 
 const Write = () => {
+
+    const tempTitle = 'This is the temp title'
 
     const [title, setTitle] = useState("")
     const [summary, setSummary] = useState("")
@@ -36,7 +40,7 @@ const Write = () => {
                 <input 
                     className="write-title"
                     type="text" 
-                    placeholder="Title"
+                    placeholder={"Title"}
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                 >
@@ -48,13 +52,23 @@ const Write = () => {
                     value={summary}
                     onChange={(e) => setSummary(e.target.value)}
                 ></input>
-                <textarea 
+                <ReactQuill 
+                    style={{
+                        minHeight: '300px',
+                        width: '900px',
+                        color: 'black',
+                        backgroundColor: 'white'
+                    }}
+                    onChange={(newValue) => setContent(newValue)}
+                    value={content}
+                    />
+                {/* <textarea 
                     cols={100} 
                     rows={15} 
                     placeholder='Write something...'
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
-                ></textarea>
+                ></textarea> */}
             </div>
         </div>
     )

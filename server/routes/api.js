@@ -43,8 +43,6 @@ router.post("/user/signin", async (req, res) => {
                 if (err) throw err
                 res.cookie('token', token).send('ok')
             })
-        } else {
-            res.sendStatus(400)
         }
     } catch {
         res.sendStatus(400)
@@ -71,7 +69,7 @@ router.post('/logout', (req, res) => {
 
 // GET request for post list
 router.get("/", async (req, res) => {
-    const posts = await Post.find()
+    const posts = await Post.find().populate("author").sort({timestamp: -1})
 
     res.json(posts)
 })
@@ -95,6 +93,10 @@ router.post("/post/create", async (req, res) => {
     await post.save()
 
     res.json({post})
+})
+
+router.delete("/post/delete:id", async (req, res) => {
+    await Post.deleteOne({_id: req.params.id})
 })
 
 

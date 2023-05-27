@@ -11,7 +11,7 @@ const Home = ({userData, setUserData}) => {
 
     useEffect(() => {
       displayPosts()
-    }, [])
+    }, [posts])
   
     const displayPosts = async () => {
       await fetch(API_BASE, {

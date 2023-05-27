@@ -29,9 +29,7 @@ const Post = ({userData, setUserData}) => {
                 <h4 className="post-date">{moment(post.timestamp).format('LL')}</h4>
                 <h1 className="post-title">{post.title}</h1>
                 <img src="/ai.jpg" width={'800px'}></img>
-                <p className="post-content">
-                    {post.content}
-                </p>
+                <div className="post-content" dangerouslySetInnerHTML={{__html: post.content}} />
             </div>
         </div>
     )
