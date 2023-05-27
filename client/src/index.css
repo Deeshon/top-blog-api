@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -161,7 +161,7 @@ a {
 .post-view{
   margin-top: 100px;
   color: white;
-  width: 50%;
+  width: 40%;
 }
 
 .post-date {
@@ -242,11 +242,15 @@ textarea:focus {
 textarea, textarea:focus {
   background-color: rgb(15 23 42);
   border: none;
-  color: white;
+  color: black;
   margin-top: 25px;
-  font-size: 28px;
+  font-size: 16px;
   padding-left: 20px;
   padding-top: 20px;
+}
+
+textarea ::placeholder {
+  color: black
 }
 
 
@@ -292,4 +296,53 @@ textarea, textarea:focus {
 .model-sign-in:hover {
   background: rgba(255, 255, 255, 0.1);
   cursor: pointer;
+}
+
+.footer-container {
+  display: flex;
+  width: 130px;
+  margin-left: 450px;
+  justify-content: space-between;
+}
+
+.comment-icon, .like-icon {
+  color: white;
+  font-size: 30px;
+  
+}
+
+.icon-container {
+  display: flex;
+  color: white
+}
+
+.respond-btn {
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 80%;
+  background-color: lightgreen;
+  color: white;
+  font-weight: bold
+}
+
+.comment{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.comment-header {
+  display: flex;
+}
+
+.comment-content {
+  margin-top: 10px
+}
+
+.comment-footer .like-icon {
+  font-size: 20px
+}
+
+.comment hr {
+  color: red;
+  background-color: red;
 }

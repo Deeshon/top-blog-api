@@ -28,3 +28,6 @@ Content-Type: application/json
 {
     "password": "nyctophile101"
 }
+
+###
+GET http://localhost:3001/api/comments/647132096576a4f46d600a74

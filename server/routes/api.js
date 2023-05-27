@@ -114,23 +114,26 @@ router.put('/post/update/:id', async (req, res) => {
     }})
 })
 
-// /// COMMENT ROUTES ///
+/// COMMENT ROUTES ///
 
-// // GET request for comment list for a post
-// router.get("/post/:postid/comments", async (req, res) => {
-//     const comments = await Comment.find({author: req.params.postid})
-// })
+// GET request for comment list for a post
+router.get("/comments/:postid", async (req, res) => {
+    const comments = await Comment.find({post: req.params.postid}).populate('author').sort({timestamp: -1})
 
-// // POST request for creating comment
-// router.post("/post/comment/create", async (req, res) => {
-//     const comment = new Comment({
-//         content: req.body.content,
-//         author: req.body.author
-//     })
+    res.json(comments)
+})
 
-//     await comment.save()
+// POST request for creating comment
+router.post("/post/comment/create", async (req, res) => {
+    const comment = new Comment({
+        content: req.body.content,
+        author: req.body.author,
+        post: req.body.post
+    })
 
-//     res.json(comment)
-// })
+    await comment.save()
+
+    res.json(comment)
+})
 
 module.exports = router
