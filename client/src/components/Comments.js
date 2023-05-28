@@ -25,7 +25,7 @@ const Comment = ({comment}) => {
                 <div style={{marginTop: '15px',}}>
                     {comment.author.username}
                     <br />
-                    {moment(comment.timestamp).format('DD/MM hh:mm')}
+                    {moment(comment.timestamp).format('DD/MM HH:mm:ss')}
                 </div>
             </div>
             <div className="comment-content">

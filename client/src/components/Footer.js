@@ -25,11 +25,26 @@ const FooterContainer = ({post, comments, setNewComment}) => {
           .then(data => {setNewComment(data)})
     }    
 
+
+    const likePost = async () => {
+        const likes = post.likes + 1
+        await fetch(`http://localhost:3001/api/${post._id}/like`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                likes: likes
+            })
+        })
+
+    }
+
     return(
         <div className="footer-container">
             <div className='icon-container'>
-                <div className="like-icon">❤</div>
-                <div style={{marginTop: '20px'}}>1.1k</div>
+                <div className="like-icon" onClick={likePost}>❤</div>
+                <div style={{marginTop: '20px'}}>{post.likes}</div>
             </div>
             <div className='icon-container'>
                 <div className="like-icon" onClick={() => setVisible(true)}>💬</div>

@@ -90,7 +90,11 @@ a {
   cursor: pointer;
 }
 
-.edit-post, .delete-post {
+.profile img:hover{
+  cursor: pointer
+}
+
+.edit-post, .delete-post, .publish-post {
   width: 45px;
   height: 40px;
   border-radius: 50%;
@@ -101,9 +105,13 @@ a {
   border: 0;
 }
 
-.edit-post:hover, .delete-post:hover {
+.edit-post:hover, .delete-post:hover, .publish-post:hover {
   background: rgba(255,255,255,0.5);
   cursor: pointer;
+}
+
+.publish-post:active {
+  opacity: 0.5
 }
 
 .sub-container {
@@ -311,6 +319,15 @@ textarea ::placeholder {
   
 }
 
+.like-icon:hover {
+  color: gray ;
+  cursor: pointer;
+}
+
+.like-icon:active {
+  opacity: 0.5;
+}
+
 .icon-container {
   display: flex;
   color: white
@@ -345,4 +362,20 @@ textarea ::placeholder {
 .comment hr {
   color: red;
   background-color: red;
+}
+
+.profile-post {
+  border: 0;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  width: 550px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+}
+
+.profile-post:hover {
+  background: rgba(200,200,175,0.3);
+  cursor: pointer;
 }

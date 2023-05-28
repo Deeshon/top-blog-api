@@ -43,7 +43,7 @@ const Header = () => {
                     <button className="write-post">✎ Write</button>
                     </Link>
                     <div className="profile" onClick={() => setVisible(!visible)}>
-                        <img src="/profile.jpg" width={"100px"}></img>
+                        <img src="/defaultprofile.jpg" width={"50px"} height={'50px'} style={{borderRadius: '50%', marginTop: '5px'}}></img>
                         <Model isOpen={visible} style={{
                             overlay: {
                                 background: "rgba(15, 23, 42, 0.3)"
@@ -60,7 +60,9 @@ const Header = () => {
 
                             }
                         }}>
-                            <h3 style={{margin: '0'}}>{userInfo.username}</h3>
+                            <Link to={`http://localhost:3000/profile/${userInfo._id}`}>
+                                <h3 style={{margin: '0'}}>{userInfo.username}</h3>
+                            </Link>
                             <button className='btn' onClick={logout} style={{marginTop: '10px', width: '150px'}}>Log out</button>
                         </Model>
                     </div>

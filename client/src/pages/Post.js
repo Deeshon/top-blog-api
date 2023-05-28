@@ -19,7 +19,7 @@ const Post = ({userData, setUserData}) => {
     useEffect(() => {
         displayPost(id)
         displayComments(id)
-    }, [newComment])
+    }, [newComment, post])
 
     const displayPost = (id) => {
         console.log(id)
@@ -46,7 +46,7 @@ const Post = ({userData, setUserData}) => {
                 <div className="post-view">
                     <h4 className="post-date">{moment(post.timestamp).format('LL')}</h4>
                     <h1 className="post-title">{post.title}</h1>
-                    <img src="/ai.jpg" width={'700px'}></img>
+                    <img src={`http://localhost:3001/${post.image}`} width={'700px'}></img>
                     <div className="post-content" dangerouslySetInnerHTML={{__html: post.content}} />
                     <hr></hr>
                 </div>

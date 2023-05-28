@@ -7,6 +7,7 @@ import Signup from './components/Signup'
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Layout from "./Layout";
 import { UserContextProvider } from "./UserContext";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
               <Route path='/login' element={<Login />} ></Route>
               <Route path='/signup' element={<Signup />} ></Route>
               <Route path='/post/:id' element={<Post />} ></Route>
+              <Route path='/profile/:id' element={<Profile />}></Route>
             </Route>
             <Route path='/post/create' element={<Write />}></Route>
             <Route path='/post/update/:id' element={<Write />}></Route>

@@ -2,6 +2,9 @@ const express = require("express")
 const router = express.Router()
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
+const multer = require('multer')
+const upload = multer({dest: 'uploads/'})
+const fs = require('fs')
 const User = require("../models/User")
 const Post = require("../models/Post")
 const Comment = require("../models/Comment")
@@ -69,7 +72,13 @@ router.post('/logout', (req, res) => {
 
 // GET request for post list
 router.get("/", async (req, res) => {
-    const posts = await Post.find().populate("author").sort({timestamp: -1})
+    const posts = await Post.find({isPublished: true}).populate("author").sort({timestamp: -1})
+
+    res.json(posts)
+})
+
+router.get("/:id/posts", async (req, res) => {
+    const posts = await Post.find({author: req.params.id})
 
     res.json(posts)
 })
@@ -82,17 +91,24 @@ router.get("/post/:id", async (req, res) => {
 })
 
 // POST request for creating post
-router.post("/post/create", async (req, res) => {
+router.post("/post/create", upload.single('file'), async (req, res) => {
+    
+    const {originalname, path} = req.file
+    const ext = originalname.split('.')[1]
+    const newPath = path + '.' + ext
+    fs.renameSync(path, newPath )
+
     const post = new Post({
         title: req.body.title,
         summary: req.body.summary,
         content: req.body.content,
-        author: req.body.author
+        author: req.body.author,
+        image: newPath
     })
 
     await post.save()
 
-    res.json({post})
+    // res.json({post})
 })
 
 router.delete("/post/delete/:id", async (req, res) => {
@@ -112,6 +128,24 @@ router.put('/post/update/:id', async (req, res) => {
         summary: req.body.summary,
         content: req.body.content,
     }})
+})
+
+
+router.put('/:postid/like', async (req, res) => {
+    await Post.updateOne({_id: req.params.postid}, {
+        likes: req.body.likes
+    })
+})
+
+router.put('/posts/update/:postid', async (req, res) => {
+
+    const post = await Post.findOne({_id: req.params.postid})
+    const newPost = await Post.updateOne({_id: req.params.postid}, {$set : {
+        isPublished: !post.isPublished
+    }})
+
+    res.json(newPost)
+
 })
 
 /// COMMENT ROUTES ///

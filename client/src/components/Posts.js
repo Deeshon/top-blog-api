@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import { UserContext } from '../UserContext'
 
-const PostsContainer = ({posts, sendData}) => {
+const PostsContainer = ({posts}) => {
 
     const [redirect, setRedirect] = useState(false)
 
@@ -11,7 +11,7 @@ const PostsContainer = ({posts, sendData}) => {
             <div>
                 {
                     posts.map((post) => {
-                        return (<PreviewPost post={post} sendData={sendData} />)
+                        return (<PreviewPost post={post} />)
                     })
                 }
             </div>
