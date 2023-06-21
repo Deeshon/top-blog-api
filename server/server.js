@@ -1,13 +1,16 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const cookieParser = require('cookie-parser')
 
 const apiRouter = require("./routes/api")
 
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({credentials:true, origin: 'http://localhost:3000'}))
+app.use(cookieParser())
+app.use('/uploads', express.static(__dirname + '/uploads'))
 
 app.use("/api", apiRouter)
 

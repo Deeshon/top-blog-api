@@ -20,3 +20,20 @@ Content-Type: application/json
 
 ###
 GET http://localhost:3001/api
+
+###
+POST http://localhost:3001/api/user/signin
+Content-Type: application/json
+
+{
+    "password": "nyctophile101"
+}
+
+###
+GET http://localhost:3001/api/comments/647132096576a4f46d600a74
+
+###
+GET http://localhost:3001/api/647102a53e3d580972ea8075/posts
+
+###
+PUT http://localhost:3001/api/posts/update/647132096576a4f46d600a74

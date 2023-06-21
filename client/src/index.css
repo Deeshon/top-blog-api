@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -12,6 +12,7 @@ body {
 
 * {
   font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;         
 }
 
 a {
@@ -40,6 +41,10 @@ a {
   margin-left: 20px;
 }
 
+.icon:hover {
+  cursor: pointer;
+}
+
 .search {
   margin-left: 20px
 }
@@ -48,6 +53,24 @@ a {
   border-radius: 20px;
   padding: 10px;
   width: 100%;
+}
+
+.btn {
+  padding: 10px;
+  width: 100px;
+  margin-right: 20px;
+  background: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: opacity 0.5s;
+  text-align: center
+}
+
+.btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 .write-post {
@@ -67,9 +90,33 @@ a {
   cursor: pointer;
 }
 
+.profile img:hover{
+  cursor: pointer
+}
+
+.edit-post, .delete-post, .publish-post {
+  width: 45px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 10px;
+  margin-top: 5px;
+  color: white;
+  background-color: black;
+  border: 0;
+}
+
+.edit-post:hover, .delete-post:hover, .publish-post:hover {
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+}
+
+.publish-post:active {
+  opacity: 0.5
+}
 
 .sub-container {
   margin-top: 50px;
+  min-width: fit-content;
   width: 50%;
   height: fit-content;
   color: white;
@@ -90,12 +137,14 @@ a {
 .post-container {
   color: white;
   margin-top: 75px;
-  width: 45%;
+  width: 800px;
+
 }
 
 .post {
   padding: 30px;
   margin-bottom: 20px;
+  min-width: 800px;
 }
 
 .post:hover {
@@ -120,7 +169,7 @@ a {
 .post-view{
   margin-top: 100px;
   color: white;
-  width: 50%;
+  width: 40%;
 }
 
 .post-date {
@@ -201,14 +250,132 @@ textarea:focus {
 textarea, textarea:focus {
   background-color: rgb(15 23 42);
   border: none;
-  color: white;
+  color: black;
   margin-top: 25px;
-  font-size: 28px;
+  font-size: 16px;
   padding-left: 20px;
   padding-top: 20px;
+}
+
+textarea ::placeholder {
+  color: black
 }
 
 
 .write-container ::placeholder {
   color: white
+}
+
+.model-close:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.login-container input:focus {
+  all:unset
+}
+
+.login-container input, .login-container input:focus{
+  padding: 10px;
+  width: 300px;
+  margin-top: 20px;
+  font-size: 20px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.login-container ::placeholder {
+  color: white;
+}
+
+.model-sign-in {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  margin-top: 40px;
+  border: none;
+  font-size: 20px;
+  border-radius: 20px;
+}
+
+.model-sign-in:hover {
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.footer-container {
+  display: flex;
+  width: 130px;
+  margin-left: 450px;
+  justify-content: space-between;
+}
+
+.comment-icon, .like-icon {
+  color: white;
+  font-size: 30px;
+  
+}
+
+.like-icon:hover {
+  color: gray ;
+  cursor: pointer;
+}
+
+.like-icon:active {
+  opacity: 0.5;
+}
+
+.icon-container {
+  display: flex;
+  color: white
+}
+
+.respond-btn {
+  padding: 10px;
+  border-radius: 20px;
+  margin-left: 80%;
+  background-color: lightgreen;
+  color: white;
+  font-weight: bold
+}
+
+.comment{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.comment-header {
+  display: flex;
+}
+
+.comment-content {
+  margin-top: 10px
+}
+
+.comment-footer .like-icon {
+  font-size: 20px
+}
+
+.comment hr {
+  color: red;
+  background-color: red;
+}
+
+.profile-post {
+  border: 0;
+  margin-top: 30px;
+  margin-bottom: 25px;
+  width: 550px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+}
+
+.profile-post:hover {
+  background: rgba(200,200,175,0.3);
+  cursor: pointer;
 }
